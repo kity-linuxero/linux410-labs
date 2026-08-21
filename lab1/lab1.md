@@ -6,6 +6,13 @@
   - Ver conceptos básicos de virtualización
   - Creación de una máquina virtual
 
+### En este lab usaremos TinyCore Linux
+
+[**TinyCore Linux**](http://www.tinycorelinux.net/) es una distro minimalista pensada justo para verificar rápido que un entorno arranca bien, sin peso.
+
+Imagen base de ~21 MB.
+Arranca en RAM: corre todo desde memoria, así que bootea en segundos incluso con recursos mínimos.
+
 ## 0. Preparación del Entorno
 
 Primero, vamos a verificar que nuestra computadora soporte y tenga habilidado las instrucciones de virtualización AMD-V o VT-x para procesadores AMD e Intel respectivamente.
@@ -26,7 +33,7 @@ Primero, vamos a verificar que nuestra computadora soporte y tenga habilidado la
 Con el siguiente comando podemos ver si tenemos habilitada la virtualización:
 
 ```bash
-lscpu | grep -i virtuli
+lscpu | grep -i virtuali
 ```
 
 ##### Deberías ver algo así
@@ -35,7 +42,7 @@ lscpu | grep -i virtuli
 
 Virtualization:         AMD-V   # Para procesadores AMD
 ---
-Virtualización:         VT-x    # Para procesadores Intel    
+Virtualization:         VT-x    # Para procesadores Intel    
 ```
 
 ### Virtualización deshabilitada
@@ -70,6 +77,7 @@ En sistemas Linux, además debe agregarse al usuario como miembro de `vboxusers`
 
 ```bash
 sudo usermod -aG vboxusers $USER
+# Luego de aplicar ese cambio, será necesario reiniciar la sesión.
 ```
 
 ## 2. Iniciando Virtualbox
@@ -83,32 +91,67 @@ Al iniciar VirtualBox, si todo está bien debería abrir la siguiente ventana:
 
 
 
+1. Vamos a descargar una `iso` que es para probar la VM. Usaremos la distro [TinyCore](http://www.tinycorelinux.net). Descargaremos desde [acá](http://www.tinycorelinux.net/17.x/x86/release/TinyCore-current.iso).
 
-Vamos a descargar una `iso` que es para probar la VM. Usaremos la distro [TinyCore](http://www.tinycorelinux.net). Descargaremos desde [acá](http://www.tinycorelinux.net/17.x/x86/release/TinyCore-current.iso).
+2. La nueva VM la llamaremos `Lab1` y cargaremos la imágen ISO de **TinyCore** que hemos descargado.
 
+![](../img/lab1/img3.png)
 
-img3
-img4
-img41
-img42
-img43
+3. Le especificaremos los recursos de hardware virtual a `128 MB` de RAM y 1 `vCPU`.
 
+![](../img/lab1/img4.png)
+
+4. Crearemos una VM *sin disco rígido virtual* ya que para esta prueba usaremos una imágen booteable desde una ISO. Y hacemos clic en **Terminar**.
+
+![](../img/lab1/img41.png)
+
+5. Si hicimos todo bien, nos devolvera a la *Home* de VirtualBox donde podremos ver nuestra VM `Lab1` creada.
+
+![](../img/lab1/img6.png)
 
 
 ## 4. Iniciando una VM
-img6
-img43
-img5
 
-## 5. 
+1. En la *Home* de VirtualBox seleccionaremos `Lab1` y haremos clic en **Iniciar**
+
+2. Aparecerá una nueva ventana mostrando la BIOS de VirtualBox y luego el sistema booteará desde la ISO de `TinyCore`. Nos mostrará una advertencia que se autocapturará el teclado, le damos cerrar como muestra la imágen.
+
+![](../img/lab1/img43.png)
+
+3. Luego, al hacer clic nos aparecerá el siguiente mensaje:
+
+![](../img/lab1/img5.png)
+
+Nos está avisando que la VM va a capturar el teclado y mouse de nuestra computadora, por lo que **todo lo que tecleemos o movamos el cursor** lo hará dentro de la máquina virtual.
+
+Si queremos salir, tenemos que apretar **CONTROL DERECHO** (La tecla control que está a la derecha del teclado).
+
+>Si entendimos eso, podemos darle a **No mostrar mas este mensaje**.
+
+
+
+## 5. Nuestra VM Iniciada
+
+1. Automáticamente booteará desde la ISO y arrancará **TinyCore**.
+
+![](../img/lab1/tiny.png)
+
+2. Podemos probar como se comporta la máquina virtual, pero es un sistema mínimo solo de prueba.
+
+3. Apagaremos la VM:
+    - En el Home de VirtualBox, botón derecho sobre `Lab1`.
+    - Stop > Apagar
+    - Nos aparecerá una advertencia que estamos apagando la VM sin el procedimiento de apagado. Aceptaremos la advertencia para proceder con el apagado.
+
 
 ## Resumen de Lab
 
-En este laboratorio vimos las diferencias de performance entre bind mounts, named volumes y tmpfs, utilizando la herramienta dd para medir el rendimiento de los volúmenes.
+En este laboratorio vimos los conceptos básicos de virtualización: cómo verificar que el procesador soporte y tenga habilitadas las instrucciones de virtualización (AMD-V / VT-x), instalamos VirtualBox como hipervisor tipo 2 y creamos nuestra primera máquina virtual (`Lab1`) con recursos mínimos de hardware (128 MB de RAM y 1 vCPU). Finalmente, booteamos la VM desde una imagen ISO de TinyCore Linux sin disco rígido virtual, y aprendimos a iniciarla y apagarla correctamente desde VirtualBox.
 
 ## Links útiles
 
-![](https://download.virtualbox.org/virtualbox/7.2.8/SDKRef.pdf)
+- [Apuntes teóricos](https://linux.idepba.com.ar/clase2.html)
+- [Guía adminitrador Virtualbox](https://download.virtualbox.org/virtualbox/7.2.8/SDKRef.pdf)
 
 -----
 
@@ -116,4 +159,3 @@ En este laboratorio vimos las diferencias de performance entre bind mounts, name
 <img src="../img/logos.footer.gray.webp"\>
 </p\>
 
------
