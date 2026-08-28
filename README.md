@@ -23,29 +23,9 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | # | Laboratorio | Estado |
 |---|-------------|--------|
 | 1 | [Máquinas virtuales](./lab1/lab1.md) | ✅ Disponible |
-| 2 | Conceptos básicos de instalación GNU/Linux | 🚧 Próximamente |
+| 2 | [Instalación de Debian 13](./lab2/lab2.md) | ✅ Disponible |
+| 3 | Proceso de Login y Primeros Comandos | 🚧 Próximamente |
 
-
-## Laboratorio 1. Máquinas virtuales
-
-📄 **[Ir al laboratorio →](./lab1/lab1.md)**
-
-Primer contacto con la virtualización, que va a ser la base de todo el curso: es el entorno donde vamos a montar y romper servidores sin miedo.
-
-En este lab vamos a:
-
-- Verificar que el procesador soporte y tenga habilitadas las instrucciones de virtualización (**AMD-V** / **VT-x**).
-- Instalar **VirtualBox**, un hipervisor de tipo 2, en Windows o GNU/Linux.
-- Ver conceptos básicos de virtualización y el rol del Extension Pack.
-- Crear nuestra primera máquina virtual (`Lab1`) asignándole recursos de hardware virtual.
-- Bootear la VM desde una ISO de **TinyCore Linux** (una distro minimalista de ~21 MB que corre íntegramente en RAM), e iniciarla y apagarla correctamente.
-
-
-## Laboratorio 2. Conceptos básicos de instalación GNU/Linux
-
-En este lab veremos cuestiones para una instalación básica de GNU/Linux.
-
-**Próximamente**
 
 
 ## 🔗 Links útiles
