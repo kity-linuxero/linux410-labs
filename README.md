@@ -24,7 +24,7 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 |---|-------------|--------|
 | 1 | [Máquinas virtuales](./lab1/lab1.md) | ✅ Disponible |
 | 2 | [Instalación de Debian 13](./lab2/lab2.md) | ✅ Disponible |
-| 3 | Proceso de Login y Primeros Comandos | 🚧 Próximamente |
+| 3 | [Post-instalación y primer acceso por SSH](./lab3/lab3.md) | ✅ Disponible |
 
 
 
@@ -33,6 +33,8 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 - [Apuntes teóricos del curso](https://linux.idepba.com.ar/)
 - [Sitio oficial de VirtualBox](https://www.virtualbox.org/)
 - [TinyCore Linux](http://www.tinycorelinux.net/)
+- [Sitio oficial de Debian](https://www.debian.org/)
+- [OpenSSH](https://www.openssh.com/)
 
 
 ---------
