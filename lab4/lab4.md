@@ -8,7 +8,6 @@
 - Copiar, mover, renombrar y eliminar objetos de forma controlada.
 - Utilizar Tab, el historial y `Ctrl + R` para trabajar con mayor precisión.
 - Provocar errores comunes, leer sus mensajes y corregir la causa sin recurrir a `sudo`.
-- Escribir y revisar contenido sencillo mediante `echo` y `cat`.
 
 ### En este lab continuaremos con la VM del Laboratorio 3
 
@@ -39,7 +38,9 @@ pwd
 
 La salida de `pwd` debería mostrar el home del usuario, por ejemplo:
 
-```text
+```bash
+cristian
+lab2-vm
 /home/cristian
 ```
 
@@ -63,29 +64,13 @@ tree --version
 
 ## 1. Crear el entorno de trabajo
 
-**1. Regresamos al home y verificamos dónde estamos:**
+**1. Nos aseguramos de estar en nuestro `home`:**
 
 ```bash
 cd
-pwd
 ```
 
-**2. Antes de crear el laboratorio, comprobamos si ya existe:**
-
-```bash
-ls -ld ~/laboratorio-clase5
-```
-
-Si aparece `No such file or directory` o `No existe el fichero o el directorio`, podemos continuar. Si el directorio ya existe por una práctica anterior, lo borraremos para empezar de cero.
-
-> [!CAUTION]
-> Antes de ejecutar el siguiente comando, comprobá que la ruta sea exactamente `~/laboratorio-clase5`. `rm -rf` elimina todo el árbol sin pedir confirmación y no utiliza una papelera.
-
-```bash
-rm -rf ~/laboratorio-clase5
-```
-
-**3. Creamos el directorio principal e ingresamos:**
+**2. Creamos el directorio principal e ingresamos:**
 
 ```bash
 mkdir ~/laboratorio-clase5
@@ -93,7 +78,7 @@ cd ~/laboratorio-clase5
 pwd
 ```
 
-**4. Creamos varios directorios con una misma orden:**
+**3. Creamos varios directorios con una misma orden:**
 
 ```bash
 mkdir config logs datos backup
@@ -110,7 +95,7 @@ cristian@lab2-vm:~/laboratorio-clase5$ tree .
 
 5 directories, 0 files
 ```
-**5. Intentamos crear un directorio cuyo padre todavía no existe:**
+**4. Intentamos crear un directorio cuyo padre todavía no existe:**
 
 ```bash
 mkdir datos/clientes/norte
@@ -124,7 +109,7 @@ mkdir -p datos/clientes/sur
 mkdir -p backup/diario
 ```
 
-**6. Creamos un directorio con espacios en el nombre:**
+**5. Creamos un directorio con espacios en el nombre:**
 
 ```bash
 mkdir "Documentos del curso"
@@ -132,12 +117,14 @@ mkdir "Documentos del curso"
 
 Las comillas hacen que Bash interprete el nombre completo como un único argumento.
 
-**7. Revisamos el resultado:**
+**6. Revisamos el resultado:**
 
 ```bash
-ls -la
-ls -ld config logs datos backup "Documentos del curso"
-tree ~/laboratorio-clase5
+ls -la # Listaremos todos los archivos
+```
+
+```bash
+tree ~/laboratorio-clase5 # Listaremos el árbol de directorios
 ```
 
 La salida de `tree` permite observar la estructura completa de un vistazo, desde el directorio principal hasta los últimos subdirectorios:
@@ -163,20 +150,24 @@ $ tree ~/laboratorio-clase5
 **1. Comparamos una ruta absoluta con una relativa mientras estamos en el directorio principal del laboratorio:**
 
 ```bash
-ls -la /home/cristian/laboratorio-clase5
 ls -la .
+```
+Practicamos con `<tab>`:
+
+```bash
+ls -la /home/<tab>/la<tab>
+# Seguir con tab hasta que liste laboratorio-clase5
 ```
 
 En el primer comando:
 
 - `ls` es el comando.
-- `-la` reúne dos opciones.
+- `-la` reúne dos opciones. (`--long` y `--all`).
 - `/home/cristian/laboratorio-clase5` es el argumento y una ruta absoluta.
 
-En el segundo, `.` representa el directorio actual y es una ruta relativa. Ambos listados deberían mostrar el mismo contenido.
+En el primer comando, `.` representa el directorio actual y es una ruta relativa. Ambos listados deberían mostrar el mismo contenido.
 
-> [!NOTE]
-> Si tu usuario no es `cristian`, reemplazá ese componente de la ruta absoluta por tu nombre de usuario.
+
 
 **2. Entramos en un directorio utilizando una ruta relativa:**
 
@@ -247,11 +238,20 @@ ls -l datos
 
 ```bash
 touch .inventario
+```
+- Listaremos el directorio
+
+```bash
 ls
-ls -a
 ```
 
-Los nombres que comienzan con `.` no aparecen en un listado normal, pero sí con la opción `-a`.
+- Listaremos TODOS los archivos/directorios.
+
+```bash
+ls -la
+```
+
+Con ese último comando deberíamos visualizar `.inventario`. Los nombres que comienzan con `.` no aparecen en un listado normal, pero sí con la opción `-a`.
 
 **4. Volvemos a ejecutar `touch` sobre un archivo que ya existe:**
 
@@ -263,40 +263,7 @@ ls -l config/servidor.conf
 
 El archivo sigue vacío. `touch` actualiza sus marcas de tiempo; no es un editor y no borra el contenido de un archivo existente.
 
-## 4. Ampliación: escribir contenido y mostrarlo
-
-Hasta ahora utilizamos `touch` para crear archivos vacíos. Para que las copias del laboratorio tengan contenido, vamos a incorporar `echo` y `cat`:
-
-- `echo` muestra un texto en la salida estándar, normalmente la terminal.
-- `cat` muestra el contenido de uno o más archivos.
-
-Para guardar la salida de `echo` utilizaremos `>` y `>>`. Estos símbolos son **redirecciones de Bash**: por ahora solamente los usaremos para completar la práctica; su funcionamiento se explicará más adelante en otra clase teórica.
-
-**1. Escribimos dos líneas en la configuración:**
-
-```bash
-echo "servidor=lab2-vm" > config/servidor.conf
-echo "entorno=practica" >> config/servidor.conf
-```
-
-**2. Agregamos contenido a los logs:**
-
-```bash
-echo "inicio correcto" > logs/acceso.log
-echo "prueba de error" > logs/error.log
-```
-
-**3. Verificamos el resultado:**
-
-```bash
-cat config/servidor.conf
-cat logs/acceso.log logs/error.log
-```
-
-> [!NOTE]
-> En esta práctica, `>` guarda la salida reemplazando el contenido anterior y `>>` agrega la salida al final. Las redirecciones se desarrollarán con más detalle en una clase posterior.
-
-## 5. Copiar archivos y directorios
+## 4. Copiar archivos y directorios
 
 Nos aseguramos de estar en el directorio principal del laboratorio:
 
@@ -339,10 +306,9 @@ Respondemos `n` para conservar la copia existente.
 ```bash
 ls -l config
 ls -l backup backup/diario backup/config-copia
-cat backup/servidor.conf
 ```
 
-## 6. Mover y renombrar
+## 5. Mover y renombrar
 
 **1. Renombramos el log de acceso:**
 
@@ -378,7 +344,40 @@ Al finalizar:
 - `datos/norte` debe existir.
 - `datos/clientes` debe conservar el directorio `sur`.
 
-## 7. Usar el historial
+Verificar con `tree`:
+
+```bash
+tree ~/laboratorio-clase5/
+```
+
+Debería ser esta salida:
+
+```bash
+/home/cristian/laboratorio-clase5/
+├── backup
+│   ├── diario
+│   │   ├── acceso.log
+│   │   └── error.log
+│   └── servidor.conf
+├── config
+│   └── servidor.conf
+├── datos
+│   ├── clientes
+│   │   └── sur
+│   │       └── clientes.txt
+│   ├── cliente.txt
+│   ├── Cliente.txt
+│   └── norte
+│       └── clientes.txt
+├── Documentos del curso
+└── logs
+    └── acceso-anterior.log
+
+10 directories, 9 files
+
+```
+
+## 6. Usar el historial
 
 **1. Mostramos las órdenes recientes:**
 
@@ -407,24 +406,24 @@ clear
 
 También podemos usar `Ctrl + L`. Después ejecutamos `history` otra vez para comprobar que limpiar la pantalla no borra el historial.
 
-## 8. Provocar y diagnosticar errores
+## 7. Provocar y diagnosticar errores
 
-Los siguientes errores son intencionales. No agregamos `sudo`: primero leemos el mensaje y revisamos la ruta.
+Los siguientes errores son intencionales. 
 
-### 8.1 Ruta inexistente
+### 7.1 Ruta inexistente
 
 ```bash
 ls datos/oeste
 ```
 
-El mensaje `No such file or directory` indica que la ruta no existe. Comprobamos los nombres disponibles:
+El mensaje `No such file or directory` o `No existe el fichero o el directorio indica que la ruta no existe. Comprobamos los nombres disponibles:
 
 ```bash
 pwd
 ls -la datos
 ```
 
-### 8.2 Un archivo no es un directorio
+### 7.2 Un archivo no es un directorio
 
 ```bash
 cd config/servidor.conf
@@ -436,7 +435,7 @@ cd config/servidor.conf
 ls -l config/servidor.conf
 ```
 
-### 8.3 Directorio no vacío
+### 7.3 Directorio no vacío
 
 ```bash
 rmdir logs
@@ -448,7 +447,7 @@ rmdir logs
 ls -la logs
 ```
 
-### 8.4 Falta un argumento
+### 7.4 Falta un argumento
 
 ```bash
 cp config/servidor.conf
@@ -461,7 +460,7 @@ cp --help
 ```
 
 
-## 9. Verificación final
+## 8. Verificación final
 
 **1. Confirmamos usuario, ubicación y contenido antes de borrar:**
 
@@ -475,13 +474,13 @@ tree -a ~/laboratorio-clase5
 
 La opción `-a` incluye también los nombres ocultos, como `.inventario`.
 
-**2. Verificamos archivos importantes:**
+**2. Verificamos que los archivos importantes estén en la ubicación esperada:**
 
 ```bash
-cat config/servidor.conf
-cat backup/servidor.conf
-cat logs/acceso-anterior.log
-cat backup/diario/error.log
+ls -l config/servidor.conf
+ls -l backup/servidor.conf
+ls -l logs/acceso-anterior.log
+ls -l backup/diario/error.log
 ```
 
 **3. Respondemos estas preguntas antes de continuar:**
@@ -490,9 +489,8 @@ cat backup/diario/error.log
 - ¿Por qué `cliente.txt` y `Cliente.txt` pueden coexistir?
 - ¿Qué diferencia hubo entre copiar y mover `error.log`?
 - ¿Por qué `rmdir logs` produjo un error?
-- ¿Para qué utilizamos `echo` y `cat`?
 
-## 10. Limpieza segura
+## 9. Limpieza segura
 
 El objetivo es eliminar únicamente el árbol creado para este laboratorio.
 
@@ -540,9 +538,7 @@ history -w
 
 ## Resumen de Lab
 
-En este laboratorio trabajamos por SSH dentro de un árbol aislado en el home del usuario. Navegamos con rutas absolutas y relativas, usamos Tab y el historial, creamos directorios y archivos, comprobamos que Linux distingue mayúsculas de minúsculas y practicamos con nombres ocultos y nombres con espacios. También copiamos, movimos, renombramos y eliminamos objetos después de verificar su ubicación.
-
-Además, incorporamos dos herramientas sencillas: usamos `echo` para generar texto y `cat` para revisar el contenido de los archivos. Para guardar ese texto usamos de manera introductoria las redirecciones `>` y `>>`, que se explicarán con más detalle en otra clase. Finalmente provocamos errores frecuentes, leímos sus mensajes y corregimos la causa sin agregar privilegios innecesarios.
+En este laboratorio trabajamos por SSH dentro de un árbol aislado en el home del usuario. Navegamos con rutas absolutas y relativas, usamos Tab y el historial, creamos directorios y archivos, comprobamos que Linux distingue mayúsculas de minúsculas y practicamos con nombres ocultos y nombres con espacios. También copiamos, movimos, renombramos y eliminamos objetos después de verificar su ubicación. Finalmente provocamos errores frecuentes, leímos sus mensajes y corregimos la causa sin agregar privilegios innecesarios.
 
 ## Links útiles y referencias
 
