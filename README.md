@@ -26,6 +26,7 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 2 | [Instalación de Debian 13](./lab2/lab2.md) | ✅ Disponible |
 | 3 | [Post-instalación y primer acceso por SSH](./lab3/lab3.md) | ✅ Disponible |
 | 4 | [Navegación y operaciones con archivos](./lab4/lab4.md) | ✅ Disponible |
+| 5 | [Lectura, comparación y búsqueda de archivos](./lab5/lab5.md) | ✅ Disponible |
 
 
 
