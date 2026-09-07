@@ -496,17 +496,10 @@ ls -lh datos/servicios.txt datos/servicios.txt.gz
 
 No borres `~/laboratorio-clase6` al terminar. Los archivos `usuarios-anterior.txt`, `usuarios-actual.txt`, `hosts.conf` y `sistema.conf` servirán para practicar con editores de texto en próximos labs.
 
-Antes de cerrar la sesión, volvé al home:
+Para terminar apagaremos la VM:
 
 ```bash
-cd
-pwd
-```
-
-Salí de SSH con:
-
-```bash
-exit
+sudo init 0 
 ```
 
 ## Resumen de Lab
