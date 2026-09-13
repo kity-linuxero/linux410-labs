@@ -27,6 +27,7 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 3 | [Post-instalación y primer acceso por SSH](./lab3/lab3.md) | ✅ Disponible |
 | 4 | [Navegación y operaciones con archivos](./lab4/lab4.md) | ✅ Disponible |
 | 5 | [Lectura, comparación y búsqueda de archivos](./lab5/lab5.md) | ✅ Disponible |
+| 6 | [Edición de archivos de texto en la terminal](./lab6/lab6.md) | ✅ Disponible |
 
 
 
