@@ -419,6 +419,14 @@ Cada comparación debería mostrar la línea agregada con el editor correspondie
 
 No elimines todavía `~/laboratorio-clase7`. Vamos a usar estos archivos para revisar y comparar los resultados en clase.
 
+### 5. Apagar de forma segura la VM
+
+Por último, apagamos la VM:
+
+```bash
+sudo init 0
+```
+
 ## Resumen del laboratorio
 
 - Nano muestra sus atajos y mensajes dentro de la propia interfaz.
