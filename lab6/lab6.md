@@ -47,7 +47,7 @@ nano --version
 vi --version | head -n 2
 tree --version | head -n 1
 ```
-
+Se usa el comando `head` enviado por `pipe` para que solo muestre las primeras 2 líneas de `vi --version`.
 Las versiones pueden variar. Si falta alguna de las herramientas, instalala:
 
 ```bash
@@ -86,12 +86,23 @@ cp hosts-original hosts-vi
 
 ```bash
 ls -lh
-file servicios-nano.txt hosts-original hosts-nano hosts-vi
+```
+Deberías ver lo siguiente:
+```bash
+$ ls -lh
+total 28K
+-rw-r--r-- 1 cristian cristian 187 sep 14 02:23 hosts-nano
+-rw-r--r-- 1 cristian cristian 187 sep 14 02:23 hosts-original
+-rw-r--r-- 1 cristian cristian 187 sep 14 02:23 hosts-vi
+-rw-r--r-- 1 cristian cristian 13K sep 14 02:23 servicios-nano.txt
+```
+Verifiquemos los archivos y diferencias con el original
+```bash
 diff -u hosts-original hosts-nano
 diff -u hosts-original hosts-vi
 ```
 
-Los dos últimos comandos no deberían mostrar diferencias.
+Los comandos no deberían mostrar diferencias, por lo que no devuelven nada.
 
 ### 4. Recorré un archivo sin abrir un editor
 
@@ -102,6 +113,8 @@ more servicios-nano.txt
 Usá <kbd>Espacio</kbd> para avanzar una pantalla, <kbd>Enter</kbd> para avanzar una línea y <kbd>q</kbd> para salir.
 
 `more` es más sencillo que `less`, pero puede resultar útil en sistemas mínimos donde no tenemos otro visor instalado.
+
+En `more` cuando se llega al final del archivo, el mismo se cierra, algo que no pasa con `less`.
 
 ## 2. Conocer la interfaz de Nano
 
@@ -139,7 +152,7 @@ Para practicar la búsqueda siguiente:
 Ctrl+C
 ```
 
-Nano muestra la línea, la columna y la posición actual. Después usá `Alt+G` para ir a una línea determinada y volvé a buscar `ssh` con `Ctrl+F` o `Ctrl+W`.
+Nano muestra la línea, la columna y la posición actual.
 
 ### 4. Salí sin realizar cambios
 
@@ -196,7 +209,9 @@ tail -n 5 hosts-nano
 diff -u hosts-original hosts-nano
 ```
 
-La comparación debería mostrar solamente la línea que agregaste.
+La comparación debería mostrar la línea que agregaste al final con `+`.
+
+
 
 ## 4. Realizar una edición básica con Vi/Vim
 
@@ -245,7 +260,7 @@ En modo normal, escribí:
 ```vim
 :w
 ```
-
+Deberías ver abajo a la izquierda escrito `:w`.
 Presioná `Enter`. El archivo queda guardado y el editor continúa abierto.
 
 ### 5. Salí normalmente
@@ -285,7 +300,7 @@ vi hosts-vi
 :q
 ```
 
-Vi/Vim debería advertir que existen cambios sin guardar y permanecer abierto.
+Vi/Vim debería advertir que existen cambios sin guardar y permanecer abierto con el mensaje `No write since last change (add ! to override)`.
 
 ### 4. Descartá el cambio y salí
 
@@ -319,6 +334,13 @@ El operador `>` crea o reemplaza el archivo. El operador `>>` agrega contenido a
 
 ```bash
 cat -n servidor.conf
+```
+Deberías ver:
+
+```bash
+     1	nombre=servidor-aula
+     2	puerto=8080
+     3	entorno=pruebas
 ```
 
 > [!CAUTION]
@@ -418,3 +440,9 @@ No elimines todavía `~/laboratorio-clase7`. Vamos a usar estos archivos para re
 - [GNU Bash - Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
 - [GNU sed Manual](https://www.gnu.org/software/sed/manual/sed.html)
 - [GNU Diffutils Manual](https://www.gnu.org/software/diffutils/manual/diffutils.html)
+
+-----
+
+<p align="center">
+<img src="../img/logos.footer.gray.webp">
+</p>
