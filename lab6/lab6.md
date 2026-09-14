@@ -6,6 +6,7 @@
 - Buscar y editar texto en copias de archivos conocidos de Debian.
 - Practicar los modos básicos de Vi/Vim.
 - Guardar el trabajo o salir descartando los cambios.
+- Recorrer un archivo con `more` cuando no disponemos de otro visor.
 - Crear y transformar texto desde la shell.
 - Revisar cada cambio con `diff`.
 
@@ -39,18 +40,19 @@ pwd
 
 La salida de `pwd` debería mostrar el home de tu usuario, por ejemplo `/home/cristian`.
 
-### 3. Comprobá qué editores están disponibles
+### 3. Comprobá qué herramientas están disponibles
 
 ```bash
 nano --version
 vi --version | head -n 2
+tree --version | head -n 1
 ```
 
-Las versiones pueden variar. Si falta alguno de los editores, instalalo:
+Las versiones pueden variar. Si falta alguna de las herramientas, instalala:
 
 ```bash
 sudo apt update
-sudo apt install nano vim
+sudo apt install nano vim tree
 ```
 
 ## 1. Preparar los archivos de trabajo
@@ -91,6 +93,16 @@ diff -u hosts-original hosts-vi
 
 Los dos últimos comandos no deberían mostrar diferencias.
 
+### 4. Recorré un archivo sin abrir un editor
+
+```bash
+more servicios-nano.txt
+```
+
+Usá <kbd>Espacio</kbd> para avanzar una pantalla, <kbd>Enter</kbd> para avanzar una línea y <kbd>q</kbd> para salir.
+
+`more` es más sencillo que `less`, pero puede resultar útil en sistemas mínimos donde no tenemos otro visor instalado.
+
 ## 2. Conocer la interfaz de Nano
 
 ### 1. Abrí la copia de `/etc/services`
@@ -110,12 +122,16 @@ En los atajos de Nano, `^` representa `Ctrl` y `M-` representa `Alt` o Meta.
 
 ### 2. Buscá una palabra conocida
 
-1. Presioná `Ctrl+W`.
+1. Presioná `Ctrl+F` o `Ctrl+W`.
 2. Escribí `ssh`.
 3. Presioná `Enter`.
-4. Presioná `Alt+W` para buscar la coincidencia siguiente.
 
 Observá en qué columna aparece `ssh` y qué puerto tiene asociado.
+
+Para practicar la búsqueda siguiente:
+
+1. Iniciá otra búsqueda con `Ctrl+F` o `Ctrl+W` y escribí `http`.
+2. Presioná `Alt+F` o `Alt+W` para recorrer sus distintas coincidencias.
 
 ### 3. Consultá la ubicación del cursor
 
@@ -123,7 +139,7 @@ Observá en qué columna aparece `ssh` y qué puerto tiene asociado.
 Ctrl+C
 ```
 
-Nano muestra la línea, la columna y la posición actual. Después usá `Alt+G` para ir a una línea determinada y volvé a buscar `ssh` con `Ctrl+W`.
+Nano muestra la línea, la columna y la posición actual. Después usá `Alt+G` para ir a una línea determinada y volvé a buscar `ssh` con `Ctrl+F` o `Ctrl+W`.
 
 ### 4. Salí sin realizar cambios
 
@@ -143,7 +159,7 @@ nano hosts-nano
 
 ### 2. Buscá una línea existente
 
-1. Presioná `Ctrl+W`.
+1. Presioná `Ctrl+F` o `Ctrl+W`.
 2. Escribí `localhost`.
 3. Presioná `Enter`.
 
@@ -165,6 +181,7 @@ La red `192.0.2.0/24` está reservada para documentación. Esta línea se usa so
 2. Presioná `Alt+U` para deshacerla.
 3. Presioná `Alt+E` para rehacerla.
 4. Presioná nuevamente `Alt+U` para dejar solamente la línea `servidor-aula`.
+5. Presioná `Backspace` una vez para quitar la línea vacía que quedó al final.
 
 ### 5. Guardá y salí
 
@@ -349,9 +366,9 @@ El resultado debería ser similar a:
 ├── hosts-nano
 ├── hosts-original
 ├── hosts-vi
-├── servidor.conf
+├── servicios-nano.txt
 ├── servidor-nuevo.conf
-└── servicios-nano.txt
+└── servidor.conf
 
 1 directory, 6 files
 ```
@@ -383,7 +400,8 @@ No elimines todavía `~/laboratorio-clase7`. Vamos a usar estos archivos para re
 ## Resumen del laboratorio
 
 - Nano muestra sus atajos y mensajes dentro de la propia interfaz.
-- `Ctrl+W` busca, `Ctrl+O` guarda y `Ctrl+X` sale de Nano.
+- `more` permite recorrer un archivo pantalla por pantalla sin editarlo.
+- `Ctrl+F` o `Ctrl+W` buscan, `Ctrl+O` guarda y `Ctrl+X` sale de Nano.
 - Vi/Vim comienza normalmente en modo normal.
 - `o` crea una línea y entra en modo inserción. `Esc` vuelve al modo normal.
 - `/texto` inicia una búsqueda en Vi/Vim.
