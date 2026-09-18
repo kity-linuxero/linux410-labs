@@ -28,6 +28,7 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 4 | [Navegación y operaciones con archivos](./lab4/lab4.md) | ✅ Disponible |
 | 5 | [Lectura, comparación y búsqueda de archivos](./lab5/lab5.md) | ✅ Disponible |
 | 6 | [Edición de archivos de texto en la terminal](./lab6/lab6.md) | ✅ Disponible |
+| 7 | [Usuarios, grupos e identidad](./lab7/lab7.md) | ✅ Disponible |
 
 
 
