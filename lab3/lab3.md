@@ -72,11 +72,11 @@ Debian dispone de varias consolas de texto independientes. Primero comprobamos q
 tty
 ```
 
-![](./img/tty11.png)
+![](./img/tty1.png)
 
 En VirtualBox podemos cambiar a otra consola con la tecla anfitriona —por defecto, `Ctrl derecho`— junto con `F2`. En la parte superior de la pantalla veremos que ahora estamos en `tty2`:
 
-![](./img/tty21.png)
+![](./img/tty2.png)
 
 Iniciamos sesión nuevamente y comprobamos qué terminal estamos utilizando:
 
