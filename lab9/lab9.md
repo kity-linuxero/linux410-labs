@@ -1,7 +1,5 @@
 # Laboratorio 9 - Procesos y servicios
 
-> Borrador para revisión docente. Acompaña la clase 10. Se probó el 2026-09-27 en Debian 13, con dos sesiones SSH y ejecutando los bloques en orden.
-
 ## Objetivo
 
 - Ver qué procesos corren en el servidor y con qué usuario.
