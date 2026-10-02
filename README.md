@@ -31,6 +31,8 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 7 | [Usuarios, grupos e identidad](./lab7/lab7.md) | ✅ Disponible |
 | 8 | [Permisos y directorios compartidos](./lab8/lab8.md) | Borrador en revisión |
 | 9 | [Procesos y servicios](./lab9/lab9.md) | Borrador en revisión |
+| 10.1 | [Paquetes con APT en Debian](./lab10/lab10.1.md) | Borrador en revisión |
+| 10.2 | [Paquetes con dnf en Rocky Linux](./lab10/lab10.2.md) | Borrador en revisión |
 
 
 
