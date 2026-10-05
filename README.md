@@ -33,6 +33,8 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 9 | [Procesos y servicios](./lab9/lab9.md) | Borrador en revisión |
 | 10.1 | [Paquetes con APT en Debian](./lab10/lab10.1.md) | Borrador en revisión |
 | 10.2 | [Paquetes con dnf en Rocky Linux](./lab10/lab10.2.md) | Borrador en revisión |
+| 11.1 | [Ampliar la partición raíz](./lab11/lab11.1.md) | Borrador en revisión |
+| 11.2 | [Agregar un disco](./lab11/lab11.2.md) | Borrador en revisión |
 
 
 
