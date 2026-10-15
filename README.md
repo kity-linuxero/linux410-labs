@@ -35,6 +35,8 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 10.2 | [Paquetes con dnf en Rocky Linux](./lab10/lab10.2.md) | Borrador en revisión |
 | 11.1 | [Ampliar la partición raíz](./lab11/lab11.1.md) | Borrador en revisión |
 | 11.2 | [Agregar un disco](./lab11/lab11.2.md) | Borrador en revisión |
+| 12.1 | [Ampliar la raíz con LVM](./lab12/lab12.1.md) | Borrador en revisión |
+| 12.2 | [Instantánea de LVM](./lab12/lab12.2.md) | Borrador en revisión |
 
 
 
