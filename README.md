@@ -29,14 +29,16 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 5 | [Lectura, comparación y búsqueda de archivos](./lab5/lab5.md) | ✅ Disponible |
 | 6 | [Edición de archivos de texto en la terminal](./lab6/lab6.md) | ✅ Disponible |
 | 7 | [Usuarios, grupos e identidad](./lab7/lab7.md) | ✅ Disponible |
-| 8 | [Permisos y directorios compartidos](./lab8/lab8.md) | Borrador en revisión |
-| 9 | [Procesos y servicios](./lab9/lab9.md) | Borrador en revisión |
-| 10.1 | [Paquetes con APT en Debian](./lab10/lab10.1.md) | Borrador en revisión |
-| 10.2 | [Paquetes con dnf en Rocky Linux](./lab10/lab10.2.md) | Borrador en revisión |
-| 11.1 | [Ampliar la partición raíz](./lab11/lab11.1.md) | Borrador en revisión |
-| 11.2 | [Agregar un disco](./lab11/lab11.2.md) | Borrador en revisión |
-| 12.1 | [Ampliar la raíz con LVM](./lab12/lab12.1.md) | Borrador en revisión |
-| 12.2 | [Instantánea de LVM](./lab12/lab12.2.md) | Borrador en revisión |
+| 8 | [Permisos y directorios compartidos](./lab8/lab8.md) | ✅ Disponible |
+| 9 | [Procesos y servicios](./lab9/lab9.md) | ✅ Disponible |
+| 10.1 | [Paquetes con APT en Debian](./lab10/lab10.1.md) | ✅ Disponible |
+| 10.2 | [Paquetes con dnf en Rocky Linux](./lab10/lab10.2.md) | ✅ Disponible |
+| 11.1 | [Ampliar la partición raíz](./lab11/lab11.1.md) | ✅ Disponible |
+| 11.2 | [Agregar un disco](./lab11/lab11.2.md) | ✅ Disponible |
+| 12.1 | [Ampliar la raíz con LVM](./lab12/lab12.1.md) | ✅ Disponible |
+| 12.2 | [Instantánea de LVM](./lab12/lab12.2.md) | ✅ Disponible |
+| 13.1 | [Logs del sistema](./lab13/lab13.1.md) | ✅ Disponible |
+| 13.2 | [Logs en otro equipo](./lab13/lab13.2.md) | ✅ Disponible |
 
 
 
