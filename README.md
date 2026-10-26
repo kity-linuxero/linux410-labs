@@ -39,6 +39,7 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 12.2 | [Instantánea de LVM](./lab12/lab12.2.md) | ✅ Disponible |
 | 13.1 | [Logs del sistema](./lab13/lab13.1.md) | ✅ Disponible |
 | 13.2 | [Logs en otro equipo](./lab13/lab13.2.md) | ✅ Disponible |
+| 14 | [Scripts de administración](./lab14/lab14.md) | ✅ Disponible |
 
 
 

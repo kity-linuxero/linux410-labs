@@ -340,6 +340,7 @@ VBoxManage controlvm Lab_Rocky natpf1 delete syslog
 - [Documentación de rsyslog: recepción por TCP (imtcp)](https://www.rsyslog.com/doc/configuration/modules/imtcp.html).
 - Clase 14: [presentación](https://linux.idepba.com.ar/clase14.html).
 - Anterior: [Laboratorio 13.1 - Logs del sistema](lab13.1.md).
+- Siguiente: [Laboratorio 14 - Scripts de administración](../lab14/lab14.md).
 
 -----
 
