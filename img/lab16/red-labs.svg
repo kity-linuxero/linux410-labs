@@ -1,0 +1,46 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500' width='800' height='500' font-family='Segoe UI, Helvetica, Arial, sans-serif'>
+<defs>
+<marker id='fn' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#1971c2'/></marker>
+<marker id='fh' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#7048e8'/></marker>
+</defs>
+<rect x='1' y='1' width='798' height='498' rx='18' fill='#ffffff' stroke='#dee2e6' stroke-width='2'/>
+<rect x='610' y='30' width='150' height='48' rx='24' fill='#fff3bf' stroke='#e67700' stroke-width='2'/>
+<text x='685' y='60' text-anchor='middle' font-size='17' font-weight='600' fill='#1e1e1e'>Internet</text>
+<rect x='200' y='22' width='360' height='66' rx='12' fill='#e5dbff' stroke='#7048e8' stroke-width='2'/>
+<text x='380' y='48' text-anchor='middle' font-size='17' font-weight='600' fill='#1e1e1e'>Anfitrión (tu computadora)</text>
+<text x='380' y='73' text-anchor='middle' font-size='14' fill='#495057' font-family='DejaVu Sans Mono, Consolas, monospace'>ssh -p 2222 · ssh -p 2223</text>
+<line x1='560' y1='54' x2='608' y2='54' stroke='#7048e8' stroke-width='2' marker-start='url(#fh)' marker-end='url(#fh)'/>
+<rect x='40' y='128' width='300' height='66' rx='12' fill='#d0ebff' stroke='#1971c2' stroke-width='2'/>
+<text x='190' y='154' text-anchor='middle' font-size='16' font-weight='600' fill='#1e1e1e'>NAT de VirtualBox</text>
+<text x='190' y='179' text-anchor='middle' font-size='13' fill='#495057' font-family='DejaVu Sans Mono, Consolas, monospace'>10.0.2.0/24 · gw 10.0.2.2 · 2222→22</text>
+<rect x='460' y='128' width='300' height='66' rx='12' fill='#d0ebff' stroke='#1971c2' stroke-width='2'/>
+<text x='610' y='154' text-anchor='middle' font-size='16' font-weight='600' fill='#1e1e1e'>NAT de VirtualBox</text>
+<text x='610' y='179' text-anchor='middle' font-size='13' fill='#495057' font-family='DejaVu Sans Mono, Consolas, monospace'>10.0.2.0/24 · gw 10.0.2.2 · 2223→22</text>
+<line x1='300' y1='88' x2='220' y2='126' stroke='#1971c2' stroke-width='2' marker-start='url(#fn)' marker-end='url(#fn)'/>
+<line x1='460' y1='88' x2='580' y2='126' stroke='#1971c2' stroke-width='2' marker-start='url(#fn)' marker-end='url(#fn)'/>
+<text x='400' y='166' text-anchor='middle' font-size='12' font-style='italic' fill='#495057'>cada NAT es</text>
+<text x='400' y='182' text-anchor='middle' font-size='12' font-style='italic' fill='#495057'>una red aparte</text>
+<line x1='190' y1='194' x2='190' y2='240' stroke='#1971c2' stroke-width='3'/>
+<rect x='40' y='240' width='300' height='136' rx='14' fill='#f8f9fa' stroke='#868e96' stroke-width='2'/>
+<text x='190' y='268' text-anchor='middle' font-size='17' font-weight='600' fill='#1e1e1e'>Debian 13</text>
+<rect x='56' y='284' width='268' height='34' rx='8' fill='#d0ebff' stroke='#1971c2' stroke-width='2'/>
+<text x='70' y='306' font-size='15' fill='#1e1e1e' font-family='DejaVu Sans Mono, Consolas, monospace'>enp0s3  10.0.2.15/24</text>
+<text x='310' y='306' text-anchor='end' font-size='12' fill='#495057'>DHCP</text>
+<rect x='56' y='326' width='268' height='34' rx='8' fill='#d3f9d8' stroke='#2f9e44' stroke-width='2'/>
+<text x='70' y='348' font-size='15' fill='#1e1e1e' font-family='DejaVu Sans Mono, Consolas, monospace'>enp0s8  192.168.50.10/24</text>
+<text x='310' y='348' text-anchor='end' font-size='12' fill='#495057'>fija</text>
+<line x1='190' y1='376' x2='190' y2='414' stroke='#2f9e44' stroke-width='3'/>
+<line x1='610' y1='194' x2='610' y2='240' stroke='#1971c2' stroke-width='3'/>
+<rect x='460' y='240' width='300' height='136' rx='14' fill='#f8f9fa' stroke='#868e96' stroke-width='2'/>
+<text x='610' y='268' text-anchor='middle' font-size='17' font-weight='600' fill='#1e1e1e'>Rocky 9</text>
+<rect x='476' y='284' width='268' height='34' rx='8' fill='#d0ebff' stroke='#1971c2' stroke-width='2'/>
+<text x='490' y='306' font-size='15' fill='#1e1e1e' font-family='DejaVu Sans Mono, Consolas, monospace'>enp0s3  10.0.2.15/24</text>
+<text x='730' y='306' text-anchor='end' font-size='12' fill='#495057'>DHCP</text>
+<rect x='476' y='326' width='268' height='34' rx='8' fill='#d3f9d8' stroke='#2f9e44' stroke-width='2'/>
+<text x='490' y='348' font-size='15' fill='#1e1e1e' font-family='DejaVu Sans Mono, Consolas, monospace'>enp0s8  192.168.50.20/24</text>
+<text x='730' y='348' text-anchor='end' font-size='12' fill='#495057'>fija</text>
+<line x1='610' y1='376' x2='610' y2='414' stroke='#2f9e44' stroke-width='3'/>
+<rect x='40' y='414' width='720' height='62' rx='14' fill='#d3f9d8' stroke='#2f9e44' stroke-width='2'/>
+<text x='400' y='440' text-anchor='middle' font-size='17' font-weight='600' fill='#1e1e1e'>Red interna «redcurso» · 192.168.50.0/24</text>
+<text x='400' y='463' text-anchor='middle' font-size='13' fill='#495057'>sin DHCP ni salida a Internet: solo se ven las VM conectadas</text>
+</svg>
