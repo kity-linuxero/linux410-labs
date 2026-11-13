@@ -44,6 +44,7 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 15.2 | [Actualizaciones automáticas](./lab15/lab15.2.md) | ✅ Disponible |
 | 16 | [Redes](./lab16/lab16.md) | ✅ Disponible |
 | 17 | [Acceso remoto seguro](./lab17/lab17.md) | ✅ Disponible |
+| 18 | [Resolución de nombres y DNS](./lab18/lab18.md) | ✅ Disponible |
 
 
 
