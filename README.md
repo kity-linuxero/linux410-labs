@@ -45,6 +45,8 @@ Cada laboratorio es autocontenido: tiene sus objetivos, los pasos con capturas d
 | 16 | [Redes](./lab16/lab16.md) | ✅ Disponible |
 | 17 | [Acceso remoto seguro](./lab17/lab17.md) | ✅ Disponible |
 | 18 | [Resolución de nombres y DNS](./lab18/lab18.md) | ✅ Disponible |
+| 19.1 | [Contenedores con Docker en Debian](./lab19/lab19.1.md) | ✅ Disponible |
+| 19.2 | [Contenedores con Podman en Rocky Linux](./lab19/lab19.2.md) | ✅ Disponible |
 
 
 
